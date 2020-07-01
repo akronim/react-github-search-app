@@ -1,0 +1,254 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --light: #fff;
+  --gray-light-1: #fafbfc;
+  --gray-light-2: #f6f8fa;
+  --gray-light-3: #e1e4e8;
+  --font-color: #586069;
+  --dark: #24292e;
+  --blue: #0366d6;
+  --error: #ba3b59;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--light);
+}
+
+.container {
+  height: 100%;
+  margin: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 1500px) {
+  .container {
+    width: 70%;
+  }
+}
+
+.header {
+  top: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: var(--dark);
+}
+
+.content {
+  text-align: center;
+}
+
+// cards card
+.cards {
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: 1fr 3fr;
+  }
+}
+
+.card {
+  width: 100%;
+  min-height: 10rem;
+  padding: 1rem;
+  border-radius: 3px;
+  margin: 0.5rem auto;
+  background-color: var(gray-light-1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+@media (min-width: 1024px) {
+  .card {
+    margin: 2rem auto;
+  }
+}
+// cards card - END
+
+.alert {
+  font-size: 4rem;
+  font-weight: 900;
+  margin: auto;
+}
+
+.error {
+  color: var(--error);
+  font-size: 2rem;
+  margin: auto;
+}
+
+// table
+table {
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid var(--gray-light-3);
+  padding: 8px;
+}
+
+tr:hover {
+  background-color: var(--gray-light-1);
+  cursor: pointer;
+}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  font-weight: 400;
+  background-color: var(--gray-light-2);
+}
+
+@media screen and (max-width: 800px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    clear: both;
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+// table - END
+
+.avatar {
+  border-radius: 50%;
+  width: 10rem;
+}
+
+.user-login {
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 3rem;
+}
+
+.text-bold {
+  font-weight: 600 !important;
+}
+
+// button
+.btn {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  width: 8rem;
+  line-height: inherit;
+  border: 1px solid var(--gray-light-3);
+  border-radius: 6px;
+  padding: 0.5rem;
+  color: var(--dark);
+  background-color: var(--gray-light-1);
+  cursor: pointer;
+  margin: 0 0.3rem;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: var(--gray-light-3);
+}
+
+.btn:focus {
+  outline: 0;
+}
+// button - END
+
+.input {
+  padding: 0.5rem;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid var(--gray-light-3);
+  border-radius: 6px;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(225, 228, 232, 0.2);
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+// spinner
+.spinner {
+  z-index: 1001;
+  margin: auto;
+  height: 3rem;
+  width: 3rem;
+  border: 6px solid var(--gray-light-2);
+  border-top-color: var(--gray-light-3);
+  border-radius: 50%;
+  animation: rotation 0.6s infinite linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+// spinner - END
